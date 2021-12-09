@@ -4,14 +4,18 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import androidx.fragment.app.Fragment
+import com.example.projektitest.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     var num = 0
+    lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val dec1 = findViewById<Button>(R.id.buttonDec1)
         val dec2 = findViewById<Button>(R.id.buttonDec2)
@@ -48,6 +52,20 @@ class MainActivity : AppCompatActivity() {
             textView.text = num.toString()
         }
 
+        binding.buttonNext.setOnClickListener {
+            replaceFragment(FirstFragment())
+        }
+
+    }
+
+   /* val firstFragment = FirstFragment()
+    supportFragmentManager.beginTransaction().replace() */
+
+    private fun replaceFragment(fragment: Fragment) {
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.fragmentContainer,fragment)
+        fragmentTransaction.commit()
     }
 
 
