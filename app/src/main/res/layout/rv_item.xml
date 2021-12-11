@@ -18,7 +18,7 @@
             android:src="@drawable/p_1" />
 
         <TextView
-            android:id="@+id/tv1"
+            android:id="@+id/pNameTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/image_view"
@@ -27,9 +27,10 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/moneyTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tv1"
+            android:layout_below="@id/pNameTV"
             android:layout_toEndOf="@id/image_view"
             android:text="Placeholder2"
             android:textSize="18sp"
