@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.buttonNext.setOnClickListener {
-            replaceFragment(FirstFragment())
+            replaceFragment(ScoreFrag())
         }
 
     }
