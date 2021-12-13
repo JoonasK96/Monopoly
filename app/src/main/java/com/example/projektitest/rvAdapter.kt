@@ -30,7 +30,9 @@ class rvAdapter(private val mPlayers : List<Player>) : RecyclerView.Adapter<rvAd
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val player = mPlayers.get(position)
         val playertv = holder.pnametv
+        val moneytv = holder.moneytv
         playertv.setText(player.name)
+        moneytv.setText(player.money.toString())
     }
 
     override fun getItemCount(): Int {
