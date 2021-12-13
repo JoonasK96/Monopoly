@@ -21,16 +21,15 @@ class ScoreFrag : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.score_fragment, container, false)
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
         var rv = requireView().findViewById<View>(R.id.recyclerView) as RecyclerView
         players = Player.createPlayersList(4);
         val adapter = rvAdapter(players)
         rv.adapter = adapter
         rv.layoutManager = LinearLayoutManager(activity)
-
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
 
         viewModel = ViewModelProvider(this).get(ScoreViewModel::class.java)
     }
