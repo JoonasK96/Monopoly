@@ -73,6 +73,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.buttonNext.setOnClickListener {
             Player.updateMoney(playerN, num)
+            Log.d("array", Player.players.toString())
         }
 
     }
