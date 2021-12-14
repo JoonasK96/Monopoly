@@ -70,10 +70,10 @@ class MainActivity : AppCompatActivity() {
         b4.setOnClickListener {
             playerN = 3
         }
+
         binding.buttonNext.setOnClickListener {
-            var players =
-            Player.updateMoney(players, playerN, 200)
-            Log.d("PlayerList", players.toString())
+            var tvMoney:Int = Integer.parseInt(textView.toString())
+            Player.updateMoney(playerN, tvMoney)
         }
 
     }
