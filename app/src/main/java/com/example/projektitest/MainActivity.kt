@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         replaceFragment(ScoreFrag())
 
+
         val dec1 = findViewById<Button>(R.id.buttonDec1)
         val dec2 = findViewById<Button>(R.id.buttonDec2)
         val dec3 = findViewById<Button>(R.id.buttonDec3)
@@ -74,6 +75,7 @@ class MainActivity : AppCompatActivity() {
         binding.buttonNext.setOnClickListener {
             Player.updateMoney(playerN, num)
             Log.d("array", Player.players.toString())
+            replaceFragment(ScoreFrag())
         }
 
     }

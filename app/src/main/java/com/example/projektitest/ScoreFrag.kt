@@ -19,19 +19,25 @@ class ScoreFrag : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
+
     ): View? {
         return inflater.inflate(R.layout.score_fragment, container, false)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        players = Player.createPlayersList(4);
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         var rv = requireView().findViewById<View>(R.id.recyclerView) as RecyclerView
-        players = Player.createPlayersList(4);
         val adapter = rvAdapter(players)
         rv.adapter = adapter
         rv.layoutManager = LinearLayoutManager(activity)
 
         viewModel = ViewModelProvider(this).get(ScoreViewModel::class.java)
     }
+
 
 }
