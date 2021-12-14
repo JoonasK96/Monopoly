@@ -10,14 +10,13 @@ import com.example.projektitest.Player
 import com.example.projektitest.R
 import com.example.projektitest.ScoreViewModel
 
-class rvAdapter(private val mPlayers : List<Player>) : RecyclerView.Adapter<rvAdapter.ViewHolder>() {
+class rvAdapter(private val mPlayers: List<Player>) : RecyclerView.Adapter<rvAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val imageView : ImageView = itemView.findViewById(R.id.image_view)
+        val imageView: ImageView = itemView.findViewById(R.id.image_view)
         val pnametv: TextView = itemView.findViewById(R.id.pNameTV)
         val moneytv: TextView = itemView.findViewById(R.id.moneyTV)
     }
-
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -36,10 +35,11 @@ class rvAdapter(private val mPlayers : List<Player>) : RecyclerView.Adapter<rvAd
     }
 
     override fun getItemCount(): Int {
-        return mPlayers.size
+        if (mPlayers.size > 4) {
+            return 4
+        } else {
+            return mPlayers.size
+        }
+
     }
-
-
-
-
 }
