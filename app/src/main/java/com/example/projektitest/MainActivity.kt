@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        replaceFragment(ScoreFrag())
 
         val dec1 = findViewById<Button>(R.id.buttonDec1)
         val dec2 = findViewById<Button>(R.id.buttonDec2)
@@ -53,7 +54,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.buttonNext.setOnClickListener {
-            replaceFragment(ScoreFrag())
+
         }
 
     }

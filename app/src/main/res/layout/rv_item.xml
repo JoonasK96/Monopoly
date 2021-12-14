@@ -21,9 +21,10 @@
             android:id="@+id/pNameTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
             android:layout_toEndOf="@id/image_view"
             android:text="@string/placeholder1"
-            android:textSize="18sp"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
         <TextView
@@ -31,9 +32,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/pNameTV"
+            android:layout_marginStart="183dp"
+            android:layout_marginTop="-33dp"
             android:layout_toEndOf="@id/image_view"
             android:text="@string/placeholder2"
-            android:textSize="18sp"
+            android:textAlignment="viewEnd"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
     </RelativeLayout>
