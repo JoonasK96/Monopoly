@@ -72,8 +72,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.buttonNext.setOnClickListener {
-            var tvMoney:Int = Integer.parseInt(textView.toString())
-            Player.updateMoney(playerN, tvMoney)
+            Player.updateMoney(playerN, num)
         }
 
     }
